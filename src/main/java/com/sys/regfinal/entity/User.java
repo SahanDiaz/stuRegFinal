@@ -15,6 +15,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
@@ -38,6 +39,7 @@ public class User {
     private String nic;
     @Column(name = "contact_number")
     private int contactNumber;
+//    public boolean getEnabled(){return enabled;}
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id") , inverseJoinColumns = @JoinColumn(name = "role_id"))

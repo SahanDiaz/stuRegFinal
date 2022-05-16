@@ -39,7 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="user : ${listUser} ">
+                        <tr th:each="user : ${user}">
                             <td th:text="${user.userId}">User ID</td>
                             <td th:text="${user.fullName}">Full Name</td>
                             <td th:text="${user.password}">Password</td>
@@ -52,9 +52,9 @@
                             <td th:text="${user.contactNumber}">contactNumber</td>
 
                             <td>
-                                <a th:href="@{'/edit/' + ${user.userId}}"
+                                <a th:href="@{/users/edit/{id} (id=${user.userId})}"
                                    class="btn btn-primary btn-sm">Edit</a>
-                                <a th:href="@{/delete/{id}(id = ${user.userId})}"
+                                <a th:href="@{/delete/{id}(id=${user.userId})}"
                                    class="btn btn-primary btn-sm">Delete</a>
                             </td>
                         </tr>
